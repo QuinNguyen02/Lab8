@@ -60,6 +60,10 @@ public class CustomList extends ArrayAdapter<City> {
 
     public boolean hasCity(City city) {return cities.contains(city);}
 
-    public void delete(City city) {}
+    public void delete(City city) {
+        if (! cities.contains(city)) {
+            throw new IllegalArgumentException("Does not contain this city in list");
+        }
+        cities.remove(city);}
 
 }
